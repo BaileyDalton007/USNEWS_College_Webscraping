@@ -48,11 +48,8 @@ for tag in tags:
     uni_hrefs.append(tag['href'])
 
 # The rest of the schools are not ranked.
-#uni_names = uni_names[:297]
-#uni_hrefs = uni_hrefs[:297]
-
-uni_names = uni_names[:3]
-uni_hrefs = uni_hrefs[:3]
+uni_names = uni_names[:297]
+uni_hrefs = uni_hrefs[:297]
 
 csv_file = open('college_data.csv', 'w+', newline='')
 csv_writer = csv.writer(csv_file)
