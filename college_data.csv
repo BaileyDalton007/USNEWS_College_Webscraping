@@ -1,0 +1,4 @@
+name,rank,type,founded,religon,schedule,location_type,phone_num,usnews_score,six_year_grad_rate,six_year_with_pell,six_year_with_pell_grad_rate,percent_class_less_twenty,percent_class_more_fifty,student_to_fac,app_deadline,app_fee,acceptance_rate,total_enroll,undergrad_enroll,grad_enroll,tuition,room_and_board
+Princeton University,1,Private,1746.0,None,Semester,Suburban,(609) 258-3000,100.0,97.0,98.0,98.0,77.6,9.0,4:1,Jan. 1,70.0,6.0,7852.0,4773.0,3079.0,56010.0,18180.0
+Harvard University,2,Private,1636.0,None,Semester,Urban,(617) 495-1000,97.0,97.0,97.0,98.0,76.3,10.0,5:1,Jan. 1,75.0,5.0,19218.0,5222.0,13996.0,55587.0,18941.0
+Massachusetts Institute of Technology,2,Private,1861.0,None,4-1-4,Urban,N/A,97.0,95.0,94.0,96.0,70.1,11.0,3:1,Jan. 1,75.0,7.0,11254.0,4361.0,6893.0,55878.0,18100.0

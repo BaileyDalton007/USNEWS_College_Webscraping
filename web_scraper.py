@@ -2,6 +2,9 @@ from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver import ActionChains
 from selenium.webdriver import FirefoxOptions
+from school_data import get_school_data
+
+import csv
 
 from bs4 import BeautifulSoup
 
@@ -44,5 +47,28 @@ for tag in tags:
     uni_names.append(tag.contents[0])
     uni_hrefs.append(tag['href'])
 
-print(uni_names)
-print(uni_hrefs)
+# The rest of the schools are not ranked.
+#uni_names = uni_names[:297]
+#uni_hrefs = uni_hrefs[:297]
+
+uni_names = uni_names[:3]
+uni_hrefs = uni_hrefs[:3]
+
+csv_file = open('college_data.csv', 'w+', newline='')
+csv_writer = csv.writer(csv_file)
+
+
+column_names = ['name', 'rank', 'type', 'founded', 'religon', 'schedule', 'location_type', 'phone_num',
+                'usnews_score', 'six_year_grad_rate', 'six_year_with_pell', 'six_year_with_pell_grad_rate',
+                'percent_class_less_twenty', 'percent_class_more_fifty', 'student_to_fac', 'app_deadline',
+                'app_fee', 'acceptance_rate', 'total_enroll', 'undergrad_enroll', 'grad_enroll', 'tuition',
+                'room_and_board']
+
+csv_writer.writerow(column_names)
+
+for (name, href) in zip(uni_names, uni_hrefs):
+    new_row = get_school_data(name, href)
+
+    csv_writer.writerow(new_row)
+
+csv_file.close()
