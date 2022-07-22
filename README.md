@@ -1,4 +1,7 @@
 # USNEWS College Webscraping
+![GitHub top language](https://img.shields.io/github/languages/top/BaileyDalton007/USNEWS_College_Webscraping?logo=Python)
+![GitHub](https://img.shields.io/github/license/BaileyDalton007/USNEWS_College_Webscraping)
+
 This is a script that uses [Selenium](https://www.selenium.dev/) to scrape the U.S. News Best National Universities ranking:
 [Here](https://www.usnews.com/best-colleges/rankings/national-universities)
 
