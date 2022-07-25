@@ -56,10 +56,11 @@ csv_writer = csv.writer(csv_file)
 
 
 column_names = ['name', 'rank', 'type', 'founded', 'religon', 'schedule', 'location_type', 'phone_num',
+                'alumni_sal','four_year_grad_rate', 'sport_assoc',
                 'usnews_score', 'six_year_grad_rate', 'six_year_with_pell', 'six_year_without_pell',
                 'percent_class_less_twenty', 'percent_class_more_fifty', 'student_to_fac', 'app_deadline',
-                'app_fee', 'acceptance_rate', 'total_enroll', 'undergrad_enroll', 'grad_enroll', 'tuition',
-                'room_and_board']
+                'app_fee', 'acceptance_rate', 'sat_1400-1600', 'sat_1200-1399', 'sat_1000-1199', 'sat_800-999', 'sat_600-799', 'sat_400-599', 'total_enroll', 'undergrad_enroll', 'grad_enroll', 'tuition',
+                'room_and_board', 'fed_debt', 'fed_debt_not_grad']
 
 csv_writer.writerow(column_names)
 

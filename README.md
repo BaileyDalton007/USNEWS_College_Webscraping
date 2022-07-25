@@ -8,6 +8,8 @@ This is a script that uses [Selenium](https://www.selenium.dev/) to scrape the U
 ## Data Description
 The data is stored in a `.csv` format that can easily be opened as a [Pandas](https://pandas.pydata.org/) dataframe.
 
+`'N/A'` is the value for any data point that USNEWS does not contain for a specific school.
+
 Each school is ordered based on its rank (ascending) and ties are in the order which they appear on the website.
 
 `name`: Name of the university
@@ -25,6 +27,12 @@ Each school is ordered based on its rank (ascending) and ties are in the order w
 `location_type`: Describes the campus and surrounding area
 
 `phone_num`: The phone number for the university listed on the USNEWS website
+
+`alumni_sal`: Median starting salary of alumni
+
+`four_year_grad_rate`: Four year graduation rate
+
+`sport_assoc`: The collegiate athletic association which the university is a part of
 
 `usnews_score`: The "USNEWS Overall score" [see more here](https://www.usnews.com/education/best-colleges/articles/how-us-news-calculated-the-rankings)
 
@@ -56,6 +64,9 @@ Each school is ordered based on its rank (ascending) and ties are in the order w
 
 `room_and_board`: Price of room and board
 
+`fed_debt`: Typical total federal loan debt after graduation
+
+`fed_debt_not_grad`: Typical total federal loan debt among those who did not graduate
 
 ## Using the Script
 
