@@ -52,17 +52,26 @@ def overview_page(data, href):
     for tag in second_table:
         data_2.append(tag.contents[0])
 
-    labels = ['Median starting salary of alumni', '4-Year Graduation Rate',
-                'Collegiate athletic association']
-    out = {}
-    for i, tag in enumerate(third_table):
-        if tag.contents[0] in labels:
-            t = tag.contents[0]
-            out[t] = third_table[i + 1].contents[0]
-    
-    data.append(out['Median starting salary of alumni'])
-    data.append(out['4-Year Graduation Rate'])
-    data.append(out['Collegiate athletic association'])
+        labels = ['Median starting salary of alumni', '4-Year Graduation Rate',
+                    'Collegiate athletic association']
+        out = {}
+        for i, tag in enumerate(third_table):
+            if tag.contents[0] in labels:
+                t = tag.contents[0]
+                out[t] = third_table[i + 1].contents[0]
+
+        try:
+            data.append(out['Median starting salary of alumni'])
+        except:
+            data.append('N/A')
+        try:
+            data.append(out['4-Year Graduation Rate'])
+        except:
+            data.append('N/A')
+        try:
+            data.append(out['Collegiate athletic association'])
+        except:
+            data.append('N/A')
 
 ########################## Rankings Page ##########################
 
