@@ -37,7 +37,6 @@ def overview_page(data, href):
     first_table = soup.findAll('p', attrs={'class': 'Paragraph-sc-1iyax29-0 clmBuI'})
 
     second_table = soup.findAll('p', attrs={'class': 'Paragraph-sc-1iyax29-0 Section__ParagraphStyled-ply21t-4 eRvRyE jTHqXR'})
-
     third_table = soup.findAll('a', attrs={'class': 'Anchor-byh49a-0 PlBer'})
 
     data.append(int(rank.contents[0].contents[0].replace('#', '')))
@@ -47,31 +46,28 @@ def overview_page(data, href):
 
     # Only shows public or private
     data[2] = data[2].split(',')[0]
-    
-    data_2 = []
-    for tag in second_table:
-        data_2.append(tag.contents[0])
 
-        labels = ['Median starting salary of alumni', '4-Year Graduation Rate',
-                    'Collegiate athletic association']
-        out = {}
-        for i, tag in enumerate(third_table):
-            if tag.contents[0] in labels:
-                t = tag.contents[0]
-                out[t] = third_table[i + 1].contents[0]
+    labels = ['median starting salary of alumni', '4-year graduation rate',
+            'collegiate athletic association']
 
-        try:
-            data.append(out['Median starting salary of alumni'])
-        except:
-            data.append('N/A')
-        try:
-            data.append(out['4-Year Graduation Rate'])
-        except:
-            data.append('N/A')
-        try:
-            data.append(out['Collegiate athletic association'])
-        except:
-            data.append('N/A')
+    out = {}
+    for i, label_tag in enumerate(third_table):
+        if str(label_tag.contents[0]).lower() in labels:
+            t = str(label_tag.contents[0]).lower()
+            out[t] = third_table[i + 1].contents[0]
+
+    try:
+        data.append(out['median starting salary of alumni'])
+    except:
+        data.append('N/A')
+    try:
+        data.append(out['4-year graduation rate'])
+    except:
+        data.append('N/A')
+    try:
+        data.append(out['collegiate athletic association'])
+    except:
+        data.append('N/A')
 
 ########################## Rankings Page ##########################
 
@@ -140,18 +136,18 @@ def tuition_page(data, href):
     try:
         second_table = soup.findAll('p', attrs={'class': 'Paragraph-sc-1iyax29-0 kGlRjY'})
 
-        labels = ['Typical total federal loan debt after graduation', 'Typical total federal loan debt among those who did not graduate']
+        labels = ['typical total federal loan debt after graduation', 'typical total federal loan debt among those who did not graduate']
         out = {}
         for i, tag in enumerate(second_table):
             t = tag.find('span', attrs={'class': 'Span-sc-19wk4id-0 fgWqyH'})
             
-            if t is not None and t.contents[0] in labels:
-                t = t.contents[0]
+            if t is not None and str(t.contents[0]).lower() in labels:
+                t = str(t.contents[0]).lower()
                 out[t] = second_table[i + 1].contents[0]
         
         
-        data.append(out['Typical total federal loan debt after graduation'])
-        data.append(out['Typical total federal loan debt among those who did not graduate'])
+        data.append(out['typical total federal loan debt after graduation'])
+        data.append(out['typical total federal loan debt among those who did not graduate'])
     except:
 
         # Fills columns if no values are found
@@ -166,13 +162,12 @@ def get_school_data(name, href):
     SCHOOL_HREF = href
     data = [name]
     overview_page(data, SCHOOL_HREF)
-    rankings_page(data, SCHOOL_HREF)
-    admissions_page(data, SCHOOL_HREF)
-    student_life_page(data, SCHOOL_HREF)
+    #rankings_page(data, SCHOOL_HREF)
+    #admissions_page(data, SCHOOL_HREF)
+    #student_life_page(data, SCHOOL_HREF)
     tuition_page(data, SCHOOL_HREF)
 
     for i, d in enumerate(data):
         data[i] = to_float(d)
 
     return data
-
