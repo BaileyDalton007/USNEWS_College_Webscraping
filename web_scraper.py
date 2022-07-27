@@ -10,16 +10,21 @@ from bs4 import BeautifulSoup
 
 import time
 
-options = FirefoxOptions()
-user_agent = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.517 Safari/537.36'
-options.add_argument('user-agent={0}'.format(user_agent))
+extension_path = 'adblocker_ultimate.xpi'
 
-driver = webdriver.Firefox(options=options)
+driver = webdriver.Firefox()
+driver.install_addon(extension_path, temporary=True)
+
 wait = WebDriverWait(driver, 20)
 action = ActionChains(driver)
 
 driver.get("https://www.usnews.com/best-colleges/rankings/national-universities")
 driver.delete_all_cookies()
+
+if (len(driver.window_handles) == 2):
+        driver.switch_to.window(window_name=driver.window_handles[-1])
+        driver.close()
+        driver.switch_to.window(window_name=driver.window_handles[0])
 
 while True:
     try:

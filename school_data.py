@@ -8,6 +8,8 @@ PAGES = ['overall-rankings', 'applying', 'academics', 'student-life', 'paying']
 
 def get_html(href):
     driver = webdriver.Firefox()
+    extension_path = 'adblocker_ultimate.xpi'
+    driver.install_addon(extension_path, temporary=True)
 
     driver.get(LINK + href)
     driver.delete_all_cookies()
@@ -162,9 +164,9 @@ def get_school_data(name, href):
     SCHOOL_HREF = href
     data = [name]
     overview_page(data, SCHOOL_HREF)
-    #rankings_page(data, SCHOOL_HREF)
-    #admissions_page(data, SCHOOL_HREF)
-    #student_life_page(data, SCHOOL_HREF)
+    rankings_page(data, SCHOOL_HREF)
+    admissions_page(data, SCHOOL_HREF)
+    student_life_page(data, SCHOOL_HREF)
     tuition_page(data, SCHOOL_HREF)
 
     for i, d in enumerate(data):
