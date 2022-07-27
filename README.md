@@ -76,9 +76,11 @@ Each school is ordered based on its rank (ascending) and ties are in the order w
 
 3. Download the WebDriver for Firefox: [geckodriver](https://github.com/mozilla/geckodriver/releases)
 
-4. Unzip the file and drag `geckodriver.exe` to the folder where the python scripts are (`.log` and `.csv` files will generate when script is run) 
+4. Unzip the file and drag `geckodriver.exe` to the folder where the python scripts are (`.log` and `.csv` files will generate when script is run)
 
-![image](https://user-images.githubusercontent.com/59097689/180339273-1551b5b8-41cc-4385-8c16-fc5fc81f408f.png)
+5. Also be sure that `adblocker_ultimate.xpi` is in the same directory as the scripts. (See description [Here](https://addons.mozilla.org/en-US/firefox/addon/adblocker-ultimate/))
+
+![image](https://user-images.githubusercontent.com/59097689/181257840-69ad889f-f841-4f30-b39d-3d376dfaf456.png)
 
 5. Run `webscraper.py` - I like to minimize every other window as Firefox will open and close many times and acts weird with other windows
 
