@@ -135,6 +135,9 @@ def tuition_page(data, href):
 
     first_table = soup.findAll('span', attrs={'class': 'Span-sc-19wk4id-0 dFGiyP'})
 
+    for i in range(2):
+        data.append(first_table[i].contents[0])
+
     try:
         second_table = soup.findAll('p', attrs={'class': 'Paragraph-sc-1iyax29-0 kGlRjY'})
 
@@ -155,9 +158,6 @@ def tuition_page(data, href):
         # Fills columns if no values are found
         data.append('N/A')
         data.append('N/A')
-
-    for i in range(2):
-        data.append(first_table[i].contents[0])
 
 ########################## Execution ##########################
 def get_school_data(name, href):
