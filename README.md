@@ -54,6 +54,18 @@ Each school is ordered based on its rank (ascending) and ties are in the order w
 
 `acceptance_rate`: Percentage of applicants who are accepted to the university
 
+`sat_1400-1600`: Percentage of accepted students with an SAT score between 1400-1600
+
+`sat_1200-1399`: Percentage of accepted students with an SAT score between 1200-1399
+
+`sat_1000-1199`: Percentage of accepted students with an SAT score between 1000-1199
+
+`sat_800-999`: Percentage of accepted students with an SAT score between 800-999
+
+`sat_600-799`: Percentage of accepted students with an SAT score between 600-799
+
+`sat_400-599`: Percentage of accepted students with an SAT score between 400-599
+
 `total_enroll`: Total amount of students enrolled
 
 `undergrad_enroll`: Total amount of undergraduate students enrolled
